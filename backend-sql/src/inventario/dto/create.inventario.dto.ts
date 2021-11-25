@@ -4,6 +4,7 @@ export class CreateInventarioDTO implements IInventario{
 
     readonly idProducto: number;
     readonly name: string;
+    readonly photoUrl:string;
     readonly precioDeVenta: number;
     readonly preciodeCompra: number;
     readonly stock: number;

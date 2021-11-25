@@ -12,10 +12,7 @@ export class InventarioController {
         async getProducts(@Res() res) {
         const products = await this.inventarioService.getProducts();
 
-        return res.status(HttpStatus.OK).json({
-            message: 'Lista de Productos',
-            data:products
-        });
+        return res.status(HttpStatus.OK).send(products);
 
         }
 
@@ -27,20 +24,14 @@ export class InventarioController {
             throw new NotFoundException('El producto no existe. Revise el id!');
         }
 
-        return res.status(HttpStatus.OK).json({
-            message: 'Producto encontrado',
-            data: product
-        });
+        return res.status(HttpStatus.OK).send(product);
     }
 
     @Post('/create')
 
     async createProduct(@Res() res, @Body() createInventarioDTO: CreateInventarioDTO ) {
         const product = await this.inventarioService.createProduct(createInventarioDTO);
-        return res.status(HttpStatus.CREATED).json({
-            message: 'Producto Creado',
-            data: product
-        });
+        return res.status(HttpStatus.CREATED).send( product);
     }
 
     @Put('/update/:productId')
@@ -53,10 +44,7 @@ export class InventarioController {
             throw new NotFoundException('El producto no existe. Revise el id!');
         }
 
-        return res.status(HttpStatus.OK).json({
-            message: 'Producto actualizado',
-            data: product
-        });
+        return res.status(HttpStatus.ACCEPTED).send(product);
     }
 
     @Delete('/delete/:productId')
@@ -68,10 +56,7 @@ export class InventarioController {
             throw new NotFoundException('El producto no existe. Revise el id!');
         }
 
-        return res.status(HttpStatus.OK).json({
-            message: 'Producto Eliminado',
-            data: product
-        });
+        return res.status(HttpStatus.OK).send(product);
 
     }
 

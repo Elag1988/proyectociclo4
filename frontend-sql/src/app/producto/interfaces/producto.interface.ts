@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
 
-export interface IInventario {
+export interface IProducto {
     
-    readonly idProducto: number,
-    readonly name: string,
+    readonly idProducto?: number,
+    readonly nombre: string,
     readonly photoUrl: string,
     readonly precioDeVenta: number,
     readonly preciodeCompra: number,

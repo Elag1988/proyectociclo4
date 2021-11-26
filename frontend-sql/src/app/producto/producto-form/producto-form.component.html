@@ -1,10 +1,10 @@
 <div class="col-lg-6 offset-sm-3">
 
-    <form (ngSubmit)="createProduct()" #form="ngForm" class="form-horizontal">
+    <form (ngSubmit)=" edit?updateProduct():createProduct()" #form="ngForm" class="form-horizontal">
         <fieldset>
 
             <!-- Form Name -->
-            <legend class="text-center">Crear Producto</legend>
+            <legend class="text-center">{{edit?"Actualizar Producto":"Crear Producto"}}</legend>
 
             <!-- Text input-->
             <div class="form-group">

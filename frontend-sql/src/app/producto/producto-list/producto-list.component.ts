@@ -19,8 +19,17 @@ export class ProductoListComponent implements OnInit {
 
   getProducts(){
     this.productoService.getProducts().subscribe(
+      data => this.productList = data
+    );
+  }
 
-      res => this.productList = res,
+  deleteProduct(productid: number) {
+    this.productoService.deleteProduct(productid).subscribe (
+      
+      res =>{
+        this.getProducts();
+        console.log(res);
+      },
       err => console.log(err)
     );
   }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProducto } from '../interfaces/producto.interface';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +19,7 @@ export class ProductoService {
     return this.htttpClient.get<IProducto[]>(`${this.API_URL}/inventario`);
   }
 
-  getProductById(productId:string):Observable<IProducto>{
+  getProductById(productId:number):Observable<IProducto>{
     return this.htttpClient.get<IProducto>(`${this.API_URL}/inventario/${productId}`);
   }
 
@@ -26,15 +27,12 @@ export class ProductoService {
     return this.htttpClient.post<IProducto>(`${this.API_URL}/inventario/create`, product);
   }
 
-  updateProduct(productId:string, product:IProducto):Observable<IProducto>{
+  updateProduct(productId:number, product:IProducto):Observable<IProducto>{
     return this.htttpClient.put<IProducto>(`${this.API_URL}/inventario/update/${productId}`, product);
   }
 
-  deleteProduct(productId:string):Observable<IProducto>{
+  deleteProduct(productId:number):Observable<IProducto>{
     return this.htttpClient.delete<IProducto>(`${this.API_URL}/inventario/delete/${productId}`);
   }
-
-
-
 
 }

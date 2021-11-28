@@ -12,10 +12,7 @@ export class DomicilioController {
         async getDomicilios(@Res() res) {
         const domicilios = await this.domicilioService.getDomicilios();
 
-        return res.status(HttpStatus.OK).json({
-            message: 'Lista de Domicilios',
-            data: domicilios
-        });
+        return res.status(HttpStatus.OK).send(domicilios);
 
         }
 
@@ -27,20 +24,14 @@ export class DomicilioController {
                 throw new NotFoundException('El domicilio no existe. Revise el id!');
             }
     
-            return res.status(HttpStatus.OK).json({
-                message: 'Domicilio encontrado',
-                data: domicilio
-            });
+            return res.status(HttpStatus.OK).send(domicilio);
         }
     
     @Post('/create')
     
         async createDomicilio(@Res() res, @Body() createDomicilioDTO: CreateDomicilioDTO ) {
             const domicilio = await this.domicilioService.createDomicilio(createDomicilioDTO);
-            return res.status(HttpStatus.CREATED).json({
-                message: 'Domicilio Creado',
-                data: domicilio
-            });
+            return res.status(HttpStatus.CREATED).send(domicilio);
         }
 
     @Put('/update/:domicilioId')
@@ -53,10 +44,7 @@ export class DomicilioController {
                 throw new NotFoundException('El domicilio no existe. Revise el id!');
             }
 
-            return res.status(HttpStatus.OK).json({
-                message: 'Domicilio actualizado',
-                data: domicilio
-            });
+            return res.status(HttpStatus.OK).send(domicilio);
         }
 
     @Delete('/delete/:domicilioId')
@@ -68,11 +56,7 @@ export class DomicilioController {
             throw new NotFoundException('El producto no existe. Revise el id!');
         }
 
-        return res.status(HttpStatus.OK).json({
-            message: 'Domicilio Eliminado',
-            data: domicilio
-        });
-
+        return res.status(HttpStatus.OK).send(domicilio);
     }
 
 }

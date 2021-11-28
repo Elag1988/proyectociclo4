@@ -8,7 +8,9 @@ import { ProductoFormComponent } from './producto/producto-form/producto-form.co
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './shared/home/home.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from "@angular/common/http"
+import {HttpClientModule} from "@angular/common/http";
+import { DomicilioListComponent } from './domicilio/domicilio-list/domicilio-list.component';
+import { DomicilioFormComponent } from './domicilio/domicilio-form/domicilio-form.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {HttpClientModule} from "@angular/common/http"
     ProductoListComponent,
     ProductoFormComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    DomicilioListComponent,
+    DomicilioFormComponent
   ],
   imports: [
     BrowserModule,

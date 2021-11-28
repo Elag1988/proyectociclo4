@@ -1,8 +1,10 @@
+<br/>
+
 <div>
     <h5 class="text-center mt-1"><strong>Inventario de productos</strong></h5>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
         <button class="btn btn-success me-md-2 mb-2" type="button" data-bs-toggle="modal" data-bs-target="#modalAddProducto">
-            <i class="bi bi-plus-circle-fill"></i>   Añadir producto</button>
+          <i class="fas fa-plus-circle"></i>   Añadir producto</button>
 </div>
 
 <br/>
@@ -11,14 +13,16 @@
     
     <div class="col-4" *ngFor="let item of productList">
 
-        <div class="card" style="width: 100%;">
-            <img src="{{item.photoUrl}}" class="card-img-top" alt="...">
+        <div class="card">
+            <img src="{{item.photoUrl}}" class="img" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{item.nombre}}</h5>
               <p class="card-text">Precio de Venta: ${{item.precioDeVenta}}</p>
               <p class="card-text">Descuento: {{item.descuento}}%</p>
-              <a (click) ="deleteProduct(item.idProducto!)" class="btn btn-danger">Eliminar</a>
-              <a [routerLink]="['/producto/edit', item.idProducto!]" routerLinkActive="router-link-active"  class="btn btn-info">Actualizar</a>
+              <a (click) ="deleteProduct(item.idProducto!)" class="btn btn-danger"><i class="far fa-trash-alt"></i> Eliminar</a>
+              <br/>
+              <br/>
+              <a [routerLink]="['/producto/edit', item.idProducto!]" routerLinkActive="router-link-active"  class="btn btn-info"> <i class="far fa-edit"></i> Actualizar</a>
             </div>
           </div>
 

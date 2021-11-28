@@ -10,7 +10,8 @@ import { HomeComponent } from './shared/home/home.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { DomicilioListComponent } from './domicilio/domicilio-list/domicilio-list.component';
-import { DomicilioFormComponent } from './domicilio/domicilio-form/domicilio-form.component'
+import { DomicilioFormComponent } from './domicilio/domicilio-form/domicilio-form.component';
+import { FooterComponent } from './shared/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DomicilioFormComponent } from './domicilio/domicilio-form/domicilio-for
     NavbarComponent,
     HomeComponent,
     DomicilioListComponent,
-    DomicilioFormComponent
+    DomicilioFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
